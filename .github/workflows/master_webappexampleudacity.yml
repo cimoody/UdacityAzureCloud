@@ -8,6 +8,11 @@ on:
     branches:
       - master
 
+defaults:
+        run:
+                working-directory: create-app-service-starter/web/
+        
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
