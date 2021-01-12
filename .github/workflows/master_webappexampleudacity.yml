@@ -39,4 +39,5 @@ jobs:
       with:
         app-name: 'webappexampleudacity'
         slot-name: 'production'
+        package: ${{ env.projectpath }}
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_5514bf095d654c7885543cf19518bdb4 }}
