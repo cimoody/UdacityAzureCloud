@@ -8,14 +8,16 @@ on:
     branches:
       - master
 
-defaults:
-        run:
-                working-directory: create-app-service-starter/web/
+# defaults:
+#        run:
+#                working-directory: create-app-service-starter/web/
         
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    env:
+      projectpath: 'create-app-service-starter/web/'
 
     steps:
     - uses: actions/checkout@master
@@ -30,6 +32,7 @@ jobs:
       with:
         platform: python
         platform-version: '3.7'
+        source-directory: ${{ env.projectpath }}
 
     - name: 'Deploy to Azure Web App'
       uses: azure/webapps-deploy@v2
